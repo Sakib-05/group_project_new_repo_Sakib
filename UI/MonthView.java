@@ -96,10 +96,13 @@ public class MonthView {
             Calendar calendar = Calendar.getInstance();
             int day = calendar.get(Calendar.DAY_OF_MONTH);
             int month = calendar.get(Calendar.MONTH) + 1; // Months are 0-based in Calendar
+            String monthName = java.time.Month.of(month).name(); // Get month name
+            monthName = monthName.substring(0, 1).toUpperCase() + monthName.substring(1).toLowerCase(); // Capitalize the first letter
             int year = calendar.get(Calendar.YEAR);
 
             // Show the EventView for today
-            app.showEventView(java.time.Month.of(month).name(), day, year); // Pass today's date to showEventView
+            app.showEventView(monthName, day, year); // Pass today's date to showEventView
+            System.out.println("Today's date: " + day + " " + monthName+ " " + year);
         });
         bottomPanel.add(todayButton);
 

@@ -107,7 +107,8 @@ public class EventView {
 
                 eventsPanel.add(wrapperPanel);
             }
-        } else {
+        }
+        else {
             // Show a message if no events are available
             JLabel noEventsLabel = new JLabel("No events scheduled for this day", SwingConstants.CENTER);
             noEventsLabel.setFont(new Font("Arial", Font.BOLD, 16));
@@ -144,6 +145,13 @@ public class EventView {
                 "Workshop",
                 "Hands-on workshop on software development",
                 "Jane Smith",1, "April", 5, "April", 2025, // Multi-day event spanning 5 days
+                11, 0, 13, 0, "Meeting Room 1",43));
+
+        // Multi-day Event 1
+        events.add(new Event(
+                "testing events today",
+                "a quick object to test events today",
+                "Tester",15, "April", 15, "April", 2025, // Multi-day event spanning 5 days
                 11, 0, 13, 0, "Meeting Room 1",43));
 
         try {
