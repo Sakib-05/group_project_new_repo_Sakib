@@ -1,9 +1,7 @@
 package UI;
 
-import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+import javax.swing.*;
 
 public class CalendarApp {
     private JFrame frame;
@@ -38,8 +36,8 @@ public class CalendarApp {
         mainPanel.add(dayView.getPanel(), "DayView");
         mainPanel.add(eventView.getPanel(), "EventView");
 
-        // Show the Menu initially
-        cardLayout.show(mainPanel, "Menu");
+
+        cardLayout.show(mainPanel, "MonthView");
 
         // Add the main panel to the frame
         frame.add(mainPanel);
@@ -81,7 +79,7 @@ public class CalendarApp {
     }
 
     public static void main(String[] args) {
-        new CalendarApp();
+        String a = "";
     }
 
 }

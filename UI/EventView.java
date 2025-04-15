@@ -1,8 +1,6 @@
 package UI;
 
 import models.Event;
-import utils.FakeEventGenerator;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -131,6 +129,22 @@ public class EventView {
         String sql = "SELECT e.*, r.room_name FROM events e JOIN Room r ON e.room_id = r.room_id";
 
         List<Event> events = new ArrayList<>();
+        events.add(new Event("Morning Meeting",
+                "Team meeting to discuss project updates",
+                "John Doe",1, "April", 1, "April", 2025, 9, 0, 10, 0, "Main Hall",10));
+
+        events.add(new Event("Times and Sorting",
+                "Testing sorting functionality",
+                "John Doe",
+                1, "April", 1, "April", 2025, // Single-day event
+                9, 0, 10, 0, "Main Hall",23));
+
+        // Multi-day Event 1
+        events.add(new Event(
+                "Workshop",
+                "Hands-on workshop on software development",
+                "Jane Smith",1, "April", 5, "April", 2025, // Multi-day event spanning 5 days
+                11, 0, 13, 0, "Meeting Room 1",43));
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
